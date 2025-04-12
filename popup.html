@@ -1,0 +1,125 @@
+<!-- This is the HTML file for the popup of the Chrome extension. It includes a title, instructions, a button to download the video, and a status message area. The styles are defined in the <style> tag. The script for handling the download functionality is linked at the end. -->
+<!--
+  This HTML file is part of a Chrome extension that allows users to download videos from various platforms.
+  The extension uses a FastAPI backend and yt-dlp for video downloading.
+  The HTML includes a title, instructions, a button to download the video, and a status message area.
+  The styles are defined in the <style> tag, and the script for handling the download functionality is linked at the end.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Video Downloader</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f5f5f7;
+      color: #333;
+      padding: 20px;
+      width: 300px;
+      margin: 0;
+      /* border-radius: 100px; Rounded corners for the popup */
+      
+    }
+
+    h2 {
+      margin: 0 0 10px;
+      font-size: 18px;
+      text-align: center;
+      color: #222;
+    }
+
+    p.instructions {
+      font-size: 13px;
+      color: #555;
+      text-align: center;
+      margin-bottom: 15px;
+    }
+
+    button {
+      background: #007bff;
+      color: white;
+      border: none;
+      padding: 10px;
+      font-size: 14px;
+      border-radius: 6px;
+      width: 100%;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background: #0056b3;
+    }
+
+    #status {
+      margin-top: 15px;
+      margin: auto;
+      font-size: 13px;
+      padding: 8px;
+      border-radius: 6px;
+      display: flex;
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    #status.success {
+      background: #d4edda;
+      color: #155724;
+      display: block;
+    }
+
+    #status.error {
+      background: #f8d7da;
+      color: #721c24;
+      display: block;
+    }
+    #urlInput{
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      border-radius: 20px;
+      border: 1px solid #ccc;
+      font-size: 14px;
+    }
+
+   
+
+    footer {
+      margin-top: 20px;
+      text-align: center;
+      font-size: 11px;
+      color: #aaa;
+    }
+  </style>
+</head>
+<body>
+  <h2>Smart Video Downloader</h2>
+  <p class="instructions">
+    This extension fetches the current tab’s video and downloads it in high quality.<br><br>
+    <ul>
+    <li>Go to a YouTube or video page</li>
+    <li>Click “Download” below</li>
+    <li>The video will automatically download with its original title</li>
+    </ul>
+  </p>
+  <input type="text" id="urlInput" placeholder="Enter video URL" />
+  <button id="downloadBtn">⬇️ Download Video</button>
+  <div id="status"></div>
+
+ 
+  <footer>
+    v1.0 | Created by Nishit Sharma
+  </footer>
+
+  <script src="popup.js"></script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+{
+  "manifest_version": 3,
+  "name": "Video Downloader",
+  "version": "1.1",
+  "permissions": ["scripting", "activeTab"],
+  "host_permissions": ["<all_urls>"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "extension_icon-removebg-preview.png"
+  }
+}
